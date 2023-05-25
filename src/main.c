@@ -77,6 +77,7 @@ lv_obj_t * labelDia;
 lv_obj_t * labelFT;
 lv_obj_t * labelFT2;
 lv_obj_t * labelVel;
+lv_obj_t * labelAce;
 
 //volatile char flag_rtc_alarm = 0;
 typedef struct  {
@@ -149,9 +150,15 @@ void but_RAMP_callback(void)
 
 void but_TICK_callback(void)
 {
-	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-	float vel = 10;
-	xQueueSendFromISR(xQueueTicks, &vel, &xHigherPriorityTaskWoken);
+	//fall edge
+	if(pio_get(BUT_TICK_PIO, PIO_INPUT, BUT_TICK_IDX_MASK) == 0){
+		BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+		uint32_t deltat = rtt_read_timer_value(RTT);
+		xQueueSendFromISR(xQueueTicks, &deltat, &xHigherPriorityTaskWoken);
+	} else {
+		//rise edge
+		rtt_init(RTT, 1);
+	}
 }
 
 static void event_handler(lv_event_t * e) {
@@ -227,6 +234,12 @@ void lv_termostato(void) {
     lv_obj_set_style_text_font(labelVel, &dseg25, LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(labelVel, lv_color_white(), LV_STATE_DEFAULT);
     lv_label_set_text_fmt(labelVel, "0");
+
+	labelAce = lv_label_create(lv_scr_act());
+	lv_obj_align(labelAce, LV_ALIGN_TOP_MID, 0 , 80);
+    lv_obj_set_style_text_font(labelAce, &dseg25, LV_STATE_DEFAULT);
+    lv_obj_set_style_text_color(labelAce, lv_color_white(), LV_STATE_DEFAULT);
+    lv_label_set_text_fmt(labelAce, "0");
 }
 
 /************************************************************************/
@@ -309,7 +322,7 @@ static void task_simulador(void *pvParameters) {
 							 //para compensar o atraso gerado pelo Escalonador do freeRTOS
 		
 		// xQueueSend(xQueueTicks, &vel, 0);
-
+		printf("delay: %d \n", t);
 		delay_ms(t);
 	}
 	
@@ -318,8 +331,8 @@ static void task_simulador(void *pvParameters) {
 static void task_led(void *pvParameters) {
 	 
 	int ramp_status = 0;
-	float vel;
-	rtt_init(RTT, 1);
+	int contagens;
+	uint32_t lastTime = 0;
 	while(1){
 		
 		if (xSemaphoreTake(xSemaphoreLED, 1)) {
@@ -334,13 +347,24 @@ static void task_led(void *pvParameters) {
 		else {
 			pio_set(LED_RAMP_PIO, LED_RAMP_IDX_MASK); 
 		}
-		if(xQueueReceive(xQueueTicks, &vel, 0)) {
+		if(xQueueReceive(xQueueTicks, &contagens, 0)) {
 			// printf("[RECEBE] VELOCIDADE RECEBIDA: %d \n", (int) (10*vel));
-			uint32_t contagens = rtt_read_timer_value(RTT);
+			
 			uint32_t tempo = 1000*contagens/32768;
-			uint32_t velocidade = tempo;
-			lv_label_set_text_fmt(labelVel, "%d", velocidade);
-			rtt_init(RTT, 1);
+			float velocidade = 0.508*PI*3.6 / (tempo / 1000);
+
+			// lv_label_set_text_fmt(labelVel, "%d", (int) (10*velocidade));
+			lv_label_set_text_fmt(labelVel, "%d", tempo);
+			lastTime = tempo;
+			printf("[RECEBE] VELOCIDADE RECEBIDA: %d \n", tempo);
+			printf("LastTime: %d \n", lastTime);
+			if((tempo - lastTime) > 200){
+				lv_label_set_text_fmt(labelAce, "1");
+			} else if((tempo - lastTime) < -200){
+				lv_label_set_text_fmt(labelAce, "2");
+			} else {
+				lv_label_set_text_fmt(labelAce, "0");
+			}
 		}
 	}
 }
@@ -392,7 +416,7 @@ void io_init(void)
 	pio_handler_set(BUT_TICK_PIO,
 	BUT_TICK_PIO_ID,
 	BUT_TICK_IDX_MASK,
-	PIO_IT_FALL_EDGE,
+	PIO_IT_EDGE,
 	but_TICK_callback);
 
 	// Ativa interrup��o e limpa primeira IRQ gerada na ativacao
