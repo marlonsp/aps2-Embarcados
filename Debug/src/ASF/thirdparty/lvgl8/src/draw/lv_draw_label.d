@@ -93,7 +93,7 @@ src/ASF/thirdparty/lvgl8/src/draw/lv_draw_label.d \
  ../src/ASF/thirdparty/lvgl8/src/draw/../core/../draw/lv_img_decoder.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../core/../draw/lv_img_buf.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../core/../draw/../misc/lv_fs.h \
- ../src/ASF/thirdparty/lvgl8/src/draw/../core/../draw/../misc/../lv_conf_internal.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../core/../draw/../misc/lv_types.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../core/../draw/../misc/lv_area.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../core/../draw/lv_img_cache.h \
@@ -296,7 +296,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/draw/../core/../draw/../misc/lv_fs.h:
 
-../src/ASF/thirdparty/lvgl8/src/draw/../core/../draw/../misc/../lv_conf_internal.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h:
 
 ../src/ASF/thirdparty/lvgl8/src/draw/../core/../draw/../misc/lv_types.h:
 

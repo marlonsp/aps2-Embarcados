@@ -345,41 +345,41 @@ src/main.d src/main.o: ../src/main.c ../src/asf.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/lv_extra.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/lv_widgets.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/animimg/lv_animimg.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/widgets/animimg/../../../lvgl.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/widgets/animimg/../../../../lvgl.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\lvgl.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/calendar/lv_calendar.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/widgets/calendar/../../../widgets/lv_btnmatrix.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\widgets\lv_btnmatrix.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/calendar/lv_calendar_header_arrow.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/widgets/calendar/../../../core/lv_obj.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\core\lv_obj.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/calendar/lv_calendar_header_dropdown.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/chart/lv_chart.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/widgets/chart/../../../lvgl.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/keyboard/lv_keyboard.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/widgets/keyboard/../../../widgets/lv_btnmatrix.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\widgets\lv_btnmatrix.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/list/lv_list.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/list/../../../core/lv_obj.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/list/../../layouts/flex/lv_flex.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/widgets/list/../../layouts/flex/../../../core/lv_obj.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\core\lv_obj.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/msgbox/lv_msgbox.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/widgets/msgbox/../../../lvgl.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/meter/lv_meter.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/widgets/meter/../../../lvgl.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/spinbox/lv_spinbox.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/widgets/spinbox/../../../lvgl.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/spinner/lv_spinner.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/widgets/spinner/../../../lvgl.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/tabview/lv_tabview.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/widgets/tabview/../../../lvgl.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/tileview/lv_tileview.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/widgets/tileview/../../../core/lv_obj.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\core\lv_obj.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/win/lv_win.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/win/../../../lvgl.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/colorwheel/lv_colorwheel.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/widgets/colorwheel/../../../lvgl.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/led/lv_led.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/led/../../../lvgl.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/imgbtn/lv_imgbtn.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/widgets/imgbtn/../../../lvgl.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/span/lv_span.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/widgets/span/../../../lvgl.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/layouts/lv_layouts.h \
@@ -388,15 +388,15 @@ src/main.d src/main.o: ../src/main.c ../src/asf.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/layouts/grid/../../../core/lv_obj.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/themes/lv_themes.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/themes/default/lv_theme_default.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/themes/default/../../../core/lv_obj.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\core\lv_obj.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/themes/mono/lv_theme_mono.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/themes/mono/../../../core/lv_obj.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/themes/basic/lv_theme_basic.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/themes/basic/../../../core/lv_obj.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/others/lv_others.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/others/snapshot/lv_snapshot.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/others/snapshot/../../../lv_conf_internal.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/others/snapshot/../../../core/lv_obj.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\core\lv_obj.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/libs/lv_libs.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/libs/bmp/lv_bmp.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/libs/bmp/../../../lv_conf_internal.h \
@@ -409,7 +409,7 @@ src/main.d src/main.o: ../src/main.c ../src/asf.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/libs/qrcode/../../../lvgl.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/libs/sjpg/lv_sjpg.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/libs/freetype/lv_freetype.h \
- ../src/ASF/thirdparty/lvgl8/src/extra/libs/freetype/../../../lvgl.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/libs/rlottie/lv_rlottie.h \
  ../src/ASF/thirdparty/lvgl8/src/extra/libs/rlottie/../../../lvgl.h \
  ../src/touch/touch.h ../src/ASF/thirdparty/CMSIS/Include/arm_math.h \
@@ -1130,27 +1130,27 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/animimg/lv_animimg.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/widgets/animimg/../../../lvgl.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/widgets/animimg/../../../../lvgl.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\lvgl.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/calendar/lv_calendar.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/widgets/calendar/../../../widgets/lv_btnmatrix.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\widgets\lv_btnmatrix.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/calendar/lv_calendar_header_arrow.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/widgets/calendar/../../../core/lv_obj.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\core\lv_obj.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/calendar/lv_calendar_header_dropdown.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/chart/lv_chart.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/widgets/chart/../../../lvgl.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/keyboard/lv_keyboard.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/widgets/keyboard/../../../widgets/lv_btnmatrix.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\widgets\lv_btnmatrix.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/list/lv_list.h:
 
@@ -1158,31 +1158,31 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/list/../../layouts/flex/lv_flex.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/widgets/list/../../layouts/flex/../../../core/lv_obj.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\core\lv_obj.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/msgbox/lv_msgbox.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/widgets/msgbox/../../../lvgl.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/meter/lv_meter.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/widgets/meter/../../../lvgl.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/spinbox/lv_spinbox.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/widgets/spinbox/../../../lvgl.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/spinner/lv_spinner.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/widgets/spinner/../../../lvgl.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/tabview/lv_tabview.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/widgets/tabview/../../../lvgl.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/tileview/lv_tileview.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/widgets/tileview/../../../core/lv_obj.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\core\lv_obj.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/win/lv_win.h:
 
@@ -1190,7 +1190,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/colorwheel/lv_colorwheel.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/widgets/colorwheel/../../../lvgl.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/led/lv_led.h:
 
@@ -1198,7 +1198,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/imgbtn/lv_imgbtn.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/widgets/imgbtn/../../../lvgl.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/widgets/span/lv_span.h:
 
@@ -1216,7 +1216,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/extra/themes/default/lv_theme_default.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/themes/default/../../../core/lv_obj.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\core\lv_obj.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/themes/mono/lv_theme_mono.h:
 
@@ -1230,9 +1230,9 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/extra/others/snapshot/lv_snapshot.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/others/snapshot/../../../lv_conf_internal.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/others/snapshot/../../../core/lv_obj.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\core\lv_obj.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/libs/lv_libs.h:
 
@@ -1258,7 +1258,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/extra/libs/freetype/lv_freetype.h:
 
-../src/ASF/thirdparty/lvgl8/src/extra/libs/freetype/../../../lvgl.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lvgl.h:
 
 ../src/ASF/thirdparty/lvgl8/src/extra/libs/rlottie/lv_rlottie.h:
 

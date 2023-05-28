@@ -44,9 +44,9 @@ src/ASF/thirdparty/lvgl8/src/draw/lv_img_decoder.d \
  ../src/ASF/thirdparty/lvgl8/src/draw/../draw/../misc/lv_area.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../draw/../misc/lv_style.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../draw/../misc/../font/lv_font.h \
- ../src/ASF/thirdparty/lvgl8/src/draw/../draw/../misc/../font/../lv_conf_internal.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../draw/../misc/../font/lv_symbol_def.h \
- ../src/ASF/thirdparty/lvgl8/src/draw/../draw/../misc/../font/../misc/lv_area.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\misc\lv_area.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../draw/../misc/lv_color.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../draw/../misc/lv_area.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../draw/../misc/lv_anim.h \
@@ -159,11 +159,11 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/draw/../draw/../misc/../font/lv_font.h:
 
-../src/ASF/thirdparty/lvgl8/src/draw/../draw/../misc/../font/../lv_conf_internal.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h:
 
 ../src/ASF/thirdparty/lvgl8/src/draw/../draw/../misc/../font/lv_symbol_def.h:
 
-../src/ASF/thirdparty/lvgl8/src/draw/../draw/../misc/../font/../misc/lv_area.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\misc\lv_area.h:
 
 ../src/ASF/thirdparty/lvgl8/src/draw/../draw/../misc/lv_color.h:
 

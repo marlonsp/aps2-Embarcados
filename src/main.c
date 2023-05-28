@@ -33,8 +33,9 @@ LV_IMG_DECLARE(fumaca);
 
 #define BUT_TICK_PIO	  PIOA
 #define BUT_TICK_PIO_ID   ID_PIOA
-#define BUT_TICK_IDX  0
+#define BUT_TICK_IDX  19
 #define BUT_TICK_IDX_MASK (1 << BUT_TICK_IDX)
+
 
 /************************************************************************/
 /* LCD / LVGL                                                           */
@@ -78,6 +79,12 @@ lv_obj_t * labelFT;
 lv_obj_t * labelFT2;
 lv_obj_t * labelVel;
 lv_obj_t * labelAce;
+static lv_obj_t * meter;
+
+static void set_value(void * indic, int32_t v)
+{
+    lv_meter_set_indicator_value(meter, indic, v);
+}
 
 //volatile char flag_rtc_alarm = 0;
 typedef struct  {
@@ -108,6 +115,7 @@ void RTC_init(Rtc *rtc, uint32_t id_rtc, calendar t, uint32_t irq_type);
 #define RAIO 0.508/2
 #define VEL_MAX_KMH  5.0f
 #define VEL_MIN_KMH  0.5f
+#define RAMP
 
 extern void vApplicationStackOverflowHook(xTaskHandle *pxTask,  signed char *pcTaskName);
 extern void vApplicationIdleHook(void);
@@ -127,6 +135,9 @@ extern void vApplicationTickHook(void) { }
 extern void vApplicationMallocFailedHook(void) {
 	configASSERT( ( volatile void * ) NULL );
 }
+
+volatile lv_meter_indicator_t * indic;
+volatile lv_anim_t a;
 
 /** Semaforo a ser usado pela task led */
 SemaphoreHandle_t xSemaphoreBut_RAMP;
@@ -231,27 +242,122 @@ void lv_termostato(void) {
 
 	labelVel = lv_label_create(lv_scr_act());
 	lv_obj_align(labelVel, LV_ALIGN_TOP_MID, 0 , 40);
-    lv_obj_set_style_text_font(labelVel, &dseg25, LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(labelVel, lv_color_white(), LV_STATE_DEFAULT);
-    lv_label_set_text_fmt(labelVel, "0");
+    lv_label_set_text(labelVel, "velocidade em km/h");
+
+	//velocimetro
+	meter = lv_meter_create(lv_scr_act());
+    lv_obj_center(meter);
+    lv_obj_set_size(meter, 200, 200);
+	//alinhar embaixo
+	lv_obj_align(meter, LV_ALIGN_BOTTOM_MID, 0, -10);
+
+    /*Add a scale first*/
+    lv_meter_scale_t * scale = lv_meter_add_scale(meter);
+    lv_meter_set_scale_ticks(meter, scale, 41, 2, 10, lv_palette_main(LV_PALETTE_GREY));
+    lv_meter_set_scale_major_ticks(meter, scale, 8, 4, 15, lv_color_black(), 10);
+
+
+    /*Add a blue arc to the start*/
+    indic = lv_meter_add_arc(meter, scale, 3, lv_palette_main(LV_PALETTE_BLUE), 0);
+    lv_meter_set_indicator_start_value(meter, indic, 0);
+    lv_meter_set_indicator_end_value(meter, indic, 20);
+
+    /*Make the tick lines blue at the start of the scale*/
+    indic = lv_meter_add_scale_lines(meter, scale, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_BLUE), false, 0);
+    lv_meter_set_indicator_start_value(meter, indic, 0);
+    lv_meter_set_indicator_end_value(meter, indic, 20);
+
+    /*Add a red arc to the end*/
+    indic = lv_meter_add_arc(meter, scale, 3, lv_palette_main(LV_PALETTE_RED), 0);
+    lv_meter_set_indicator_start_value(meter, indic, 80);
+    lv_meter_set_indicator_end_value(meter, indic, 100);
+
+    /*Make the tick lines red at the end of the scale*/
+    indic = lv_meter_add_scale_lines(meter, scale, lv_palette_main(LV_PALETTE_RED), lv_palette_main(LV_PALETTE_RED), false, 0);
+    lv_meter_set_indicator_start_value(meter, indic, 80);
+    lv_meter_set_indicator_end_value(meter, indic, 100);
+
+    /*Add a needle line indicator*/
+    indic = lv_meter_add_needle_line(meter, scale, 4, lv_palette_main(LV_PALETTE_GREY), -10);
+
+    /*Create an animation to set the value*/
+    
+	//cabou velocimetro
 
 	labelAce = lv_label_create(lv_scr_act());
 	lv_obj_align(labelAce, LV_ALIGN_TOP_MID, 0 , 80);
-    lv_obj_set_style_text_font(labelAce, &dseg25, LV_STATE_DEFAULT);
     lv_obj_set_style_text_color(labelAce, lv_color_white(), LV_STATE_DEFAULT);
-    lv_label_set_text_fmt(labelAce, "0");
+    lv_label_set_text(labelAce, "0");
 }
 
 /************************************************************************/
 /* TASKS                                                                */
 /************************************************************************/
+static void task_led(void *pvParameters) {
+	 
+	int ramp_status = 0;
+	int contagens;
+	float lastVel = 0;
+	char velocidade_str[10];
+	char lastVel_str[10];
+	while(1){
+		
+		if (xSemaphoreTake(xSemaphoreLED, 1)) {
+			ramp_status = !ramp_status;
+		}
+		
+		if(ramp_status == 1) {
+			
+			pin_toggle(LED_RAMP_PIO, LED_RAMP_IDX_MASK); 
+		}
+		
+		else {
+			pio_set(LED_RAMP_PIO, LED_RAMP_IDX_MASK); 
+		}
+		if(xQueueReceive(xQueueTicks, &contagens, 0)) {
+			// printf("[RECEBE] VELOCIDADE RECEBIDA: %d \n", (int) (10*vel));
+			
+			uint32_t tempo = 1000*contagens/32768;
 
+			float velocidade = 0.508*PI*3.6 / (tempo / 1000);
+
+			sprintf(velocidade_str, "%d", (int) (10*velocidade));
+			sprintf(lastVel_str, "%d", (int) (10*lastVel));
+
+			// lv_label_set_text_fmt(labelVel, "%d", (int) (10*velocidade));
+			lv_anim_init(&a);
+			lv_anim_set_exec_cb(&a, set_value);
+			lv_anim_set_var(&a, indic);
+			lv_anim_set_values(&a, (int) (10*lastVel), (int) (10*velocidade));
+			lv_anim_set_time(&a, 300);
+			lv_anim_start(&a);
+			
+
+			printf("[RECEBE] VELOCIDADE RECEBIDA: %s \n", velocidade_str);
+			printf("[RECEBE] lastVel: %s \n", lastVel_str);
+
+			if((velocidade - lastVel) > 0.000001){
+				printf("ENTROU AQUI \n");
+				lv_label_set_text(labelAce, "acelerando");
+			} else if((velocidade - lastVel) < -0.000001){
+				printf("ENTROU AQUI 1 \n");
+				lv_label_set_text(labelAce, "desacelerando");
+			} else {
+				printf("ENTROU AQUI 2 \n");
+				lv_label_set_text(labelAce, "constante");
+			}
+			lastVel = velocidade*1.0;
+		}
+	}
+}
 static void task_lcd(void *pvParameters) {
 	int px, py;
 
 	lv_termostato();
 
 	for (;;)  {
+
 		xSemaphoreTake( xMutexLVGL, portMAX_DELAY );
 		lv_tick_inc(50);
 		lv_task_handler();
@@ -277,110 +383,56 @@ static void task_clock(void *pvParameters) {
 
 static void task_simulador(void *pvParameters) {
 
+    pmc_enable_periph_clk(ID_PIOC);
+    pio_set_output(PIOC, PIO_PC31, 1, 0, 0);
 
-	pmc_enable_periph_clk(ID_PIOC);
-	pio_set_output(PIOC, PIO_PC31, 1, 0, 0);
+    float vel = VEL_MAX_KMH;
+    float f;
+    int ramp_up = 0;
 
-	float vel = VEL_MAX_KMH;
-	float f;
-	int ramp_up = 1;
-	int ramp_status = 0;
+    while(1){
+        pio_clear(PIOC, PIO_PC31);
+        delay_ms(1);
+        pio_set(PIOC, PIO_PC31);
+#ifdef RAMP
+        if (ramp_up) {
+            printf("[SIMU] ACELERANDO: %d \n", (int) (10*vel));
+            vel += 0.5;
+        } else {
+            printf("[SIMU] DESACELERANDO: %d \n",  (int) (10*vel));
+            vel -= 0.5;
+        }
 
-	while(1){
-		
-		if (xSemaphoreTake(xSemaphoreBut_RAMP, 1)) {
-			ramp_status = !ramp_status;
-			 xSemaphoreGive(xSemaphoreLED);
-		}
-		pio_clear(PIOC, PIO_PC31);
-		delay_ms(1);
-		pio_set(PIOC, PIO_PC31);
-		
-		
-		if(ramp_status == 1){
-			if (ramp_up) {
-				printf("[SIMU] ACELERANDO: %d \n", (int) (10*vel));
-				vel += 0.5;
-				} else {
-				printf("[SIMU] DESACELERANDO: %d \n",  (int) (10*vel));
-				vel -= 0.5;
-			}
+        if (vel >= VEL_MAX_KMH)
+        ramp_up = 0;
+    else if (vel <= VEL_MIN_KMH)
+    ramp_up = 1;
+#endif
+#ifndef RAMP
+        vel = 5;
+        printf("[SIMU] CONSTANTE: %d \n", (int) (10*vel));
+#endif
+        f = kmh_to_hz(vel, RAIO);
+        int t = 965*(1.0/f); //UTILIZADO 965 como multiplicador ao invés de 1000
+                             //para compensar o atraso gerado pelo Escalonador do freeRTOS
+        delay_ms(t);
+    }
 
-			if (vel >= VEL_MAX_KMH)
-			ramp_up = 0;
-			else if (vel <= VEL_MIN_KMH)
-			ramp_up = 1;
-		}
-		
-		else{
-			vel = 5;
-			printf("[SIMU] CONSTANTE: %d \n", (int) (10*vel));
-		}
-		
-		f = kmh_to_hz(vel, RAIO);
-		int t = 965*(1.0/f); //UTILIZADO 965 como multiplicador ao inv�s de 1000
-							 //para compensar o atraso gerado pelo Escalonador do freeRTOS
-		
-		// xQueueSend(xQueueTicks, &vel, 0);
-		printf("delay: %d \n", t);
-		delay_ms(t);
-	}
+}
+
+
+
+// static void task_recebe(void *pvParameters) {
 	
-}
-
-static void task_led(void *pvParameters) {
-	 
-	int ramp_status = 0;
-	int contagens;
-	uint32_t lastTime = 0;
-	while(1){
+// 	int ramp_status = 0;
+// 	int vel = 0;
+// 	while(1){
+// 		if(xQueueReceive(xQueueTicks, &vel, 0)) {
+// 			// printf("[RECEBE] VELOCIDADE RECEBIDA: %d \n", vel);
+// 		}
 		
-		if (xSemaphoreTake(xSemaphoreLED, 1)) {
-			ramp_status = !ramp_status;
-		}
-		
-		if(ramp_status == 1) {
-			
-			pin_toggle(LED_RAMP_PIO, LED_RAMP_IDX_MASK); 
-		}
-		
-		else {
-			pio_set(LED_RAMP_PIO, LED_RAMP_IDX_MASK); 
-		}
-		if(xQueueReceive(xQueueTicks, &contagens, 0)) {
-			// printf("[RECEBE] VELOCIDADE RECEBIDA: %d \n", (int) (10*vel));
-			
-			uint32_t tempo = 1000*contagens/32768;
-			float velocidade = 0.508*PI*3.6 / (tempo / 1000);
-
-			// lv_label_set_text_fmt(labelVel, "%d", (int) (10*velocidade));
-			lv_label_set_text_fmt(labelVel, "%d", tempo);
-			lastTime = tempo;
-			printf("[RECEBE] VELOCIDADE RECEBIDA: %d \n", tempo);
-			printf("LastTime: %d \n", lastTime);
-			if((tempo - lastTime) > 200){
-				lv_label_set_text_fmt(labelAce, "1");
-			} else if((tempo - lastTime) < -200){
-				lv_label_set_text_fmt(labelAce, "2");
-			} else {
-				lv_label_set_text_fmt(labelAce, "0");
-			}
-		}
-	}
-}
-
-static void task_recebe(void *pvParameters) {
-	
-	int ramp_status = 0;
-	int vel = 0;
-	while(1){
-		if(xQueueReceive(xQueueTicks, &vel, 0)) {
-			// printf("[RECEBE] VELOCIDADE RECEBIDA: %d \n", vel);
-			printf("[RECEBE] VELOCIDADE RECEBIDA");
-		}
-		
-	}
-}
+// 	}
+// }
 /************************************************************************/
 /* configs                                                              */
 /************************************************************************/
@@ -398,8 +450,8 @@ void io_init(void)
 
 	// Configura PIO para lidar com o pino do bot�o como entrada
 	// com pull-up
-	pio_configure(BUT_RAMP_PIO, PIO_INPUT, BUT_RAMP_IDX_MASK, PIO_PULLUP);
-	pio_set_debounce_filter(BUT_RAMP_PIO, BUT_RAMP_IDX_MASK, 1000);
+	pio_configure(BUT_RAMP_PIO, PIO_INPUT, BUT_RAMP_IDX_MASK, 0);
+	// pio_set_debounce_filter(BUT_RAMP_PIO, BUT_RAMP_IDX_MASK, 1000);
 
 	pio_configure(BUT_TICK_PIO, PIO_INPUT, BUT_TICK_IDX_MASK, PIO_PULLUP);
 	pio_set_debounce_filter(BUT_TICK_PIO, BUT_TICK_IDX_MASK, 1000);
@@ -447,6 +499,8 @@ float kmh_to_hz(float vel, float raio) {
 	float f = vel / (2*PI*raio*3.6);
 	return(f);
 }
+
+
 
 static void configure_lcd(void) {
 	/**LCD pin configure on SPI*/

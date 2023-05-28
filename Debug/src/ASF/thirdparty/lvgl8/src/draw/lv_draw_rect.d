@@ -60,7 +60,7 @@ src/ASF/thirdparty/lvgl8/src/draw/lv_draw_rect.d \
  ../src/ASF/thirdparty/lvgl8/src/draw/../misc/../draw/../misc/lv_color.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../misc/../draw/../misc/lv_area.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../misc/../draw/../misc/lv_fs.h \
- ../src/ASF/thirdparty/lvgl8/src/draw/../misc/../draw/../misc/../lv_conf_internal.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../misc/../draw/../misc/lv_types.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../misc/../draw/lv_img_cache.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../misc/../draw/lv_draw_rect.h \
@@ -88,7 +88,7 @@ src/ASF/thirdparty/lvgl8/src/draw/lv_draw_rect.d \
  ../src/ASF/thirdparty/lvgl8/src/draw/../core/../hal/../misc/lv_area.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../core/../hal/../misc/lv_ll.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../core/../hal/../misc/lv_timer.h \
- ../src/ASF/thirdparty/lvgl8/src/draw/../core/../hal/../misc/../lv_conf_internal.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../core/../hal/../misc/lv_mem.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../core/../hal/../misc/lv_log.h \
  ../src/ASF/thirdparty/lvgl8/src/draw/../core/../hal/../misc/lv_types.h \
@@ -229,7 +229,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/draw/../misc/../draw/../misc/lv_fs.h:
 
-../src/ASF/thirdparty/lvgl8/src/draw/../misc/../draw/../misc/../lv_conf_internal.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h:
 
 ../src/ASF/thirdparty/lvgl8/src/draw/../misc/../draw/../misc/lv_types.h:
 
@@ -285,7 +285,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/draw/../core/../hal/../misc/lv_timer.h:
 
-../src/ASF/thirdparty/lvgl8/src/draw/../core/../hal/../misc/../lv_conf_internal.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h:
 
 ../src/ASF/thirdparty/lvgl8/src/draw/../core/../hal/../misc/lv_mem.h:
 

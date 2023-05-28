@@ -20,7 +20,7 @@ src/ASF/thirdparty/lvgl8/src/core/lv_refr.d \
  ../src/ASF/thirdparty/lvgl8/src/core/../misc/../font/../lv_conf_internal.h \
  ../src/ASF/thirdparty/lvgl8/src/core/../misc/../font/lv_symbol_def.h \
  ../src/ASF/thirdparty/lvgl8/src/core/../misc/../font/../misc/lv_area.h \
- ../src/ASF/thirdparty/lvgl8/src/core/../misc/../font/../misc/../lv_conf_internal.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\string.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\_ansi.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\newlib.h \
@@ -160,7 +160,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gc
 
 ../src/ASF/thirdparty/lvgl8/src/core/../misc/../font/../misc/lv_area.h:
 
-../src/ASF/thirdparty/lvgl8/src/core/../misc/../font/../misc/../lv_conf_internal.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\string.h:
 

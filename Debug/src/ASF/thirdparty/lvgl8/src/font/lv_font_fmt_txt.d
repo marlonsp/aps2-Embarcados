@@ -44,7 +44,7 @@ src/ASF/thirdparty/lvgl8/src/font/lv_font_fmt_txt.d \
  ../src/ASF/thirdparty/lvgl8/src/font/../misc/../draw/../lv_conf_internal.h \
  ../src/ASF/thirdparty/lvgl8/src/font/../misc/../draw/lv_img_buf.h \
  ../src/ASF/thirdparty/lvgl8/src/font/../misc/../draw/../misc/lv_color.h \
- ../src/ASF/thirdparty/lvgl8/src/font/../misc/../draw/../misc/../lv_conf_internal.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h \
  ../src/ASF/thirdparty/lvgl8/src/font/../misc/../draw/../misc/lv_math.h \
  ../src/ASF/thirdparty/lvgl8/src/font/../misc/../draw/../misc/lv_types.h \
  ../src/ASF/thirdparty/lvgl8/src/font/../misc/../draw/../misc/lv_area.h \
@@ -144,7 +144,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/font/../misc/../draw/../misc/lv_color.h:
 
-../src/ASF/thirdparty/lvgl8/src/font/../misc/../draw/../misc/../lv_conf_internal.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h:
 
 ../src/ASF/thirdparty/lvgl8/src/font/../misc/../draw/../misc/lv_math.h:
 

@@ -53,7 +53,7 @@ src/ASF/thirdparty/lvgl8/src/hal/lv_hal_disp.d \
  ../src/ASF/thirdparty/lvgl8/src/hal/../misc/../draw/../lv_conf_internal.h \
  ../src/ASF/thirdparty/lvgl8/src/hal/../misc/../draw/lv_img_buf.h \
  ../src/ASF/thirdparty/lvgl8/src/hal/../misc/../draw/../misc/lv_fs.h \
- ../src/ASF/thirdparty/lvgl8/src/hal/../misc/../draw/../misc/../lv_conf_internal.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h \
  ../src/ASF/thirdparty/lvgl8/src/hal/../misc/../draw/../misc/lv_types.h \
  ../src/ASF/thirdparty/lvgl8/src/hal/../misc/../draw/../misc/lv_area.h \
  ../src/ASF/thirdparty/lvgl8/src/hal/../misc/../draw/lv_draw_mask.h \
@@ -66,9 +66,9 @@ src/ASF/thirdparty/lvgl8/src/hal/lv_hal_disp.d \
  ../src/ASF/thirdparty/lvgl8/src/hal/../core/../lv_conf_internal.h \
  ../src/ASF/thirdparty/lvgl8/src/hal/../core/../misc/lv_style.h \
  ../src/ASF/thirdparty/lvgl8/src/hal/../core/../misc/../font/lv_font.h \
- ../src/ASF/thirdparty/lvgl8/src/hal/../core/../misc/../font/../lv_conf_internal.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h \
  ../src/ASF/thirdparty/lvgl8/src/hal/../core/../misc/../font/lv_symbol_def.h \
- ../src/ASF/thirdparty/lvgl8/src/hal/../core/../misc/../font/../misc/lv_area.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\misc\lv_area.h \
  ../src/ASF/thirdparty/lvgl8/src/hal/../core/../misc/lv_color.h \
  ../src/ASF/thirdparty/lvgl8/src/hal/../core/../misc/lv_area.h \
  ../src/ASF/thirdparty/lvgl8/src/hal/../core/../misc/lv_anim.h \
@@ -122,7 +122,7 @@ src/ASF/thirdparty/lvgl8/src/hal/lv_hal_disp.d \
  ../src/ASF/thirdparty/lvgl8/src/hal/../core/lv_theme.h \
  ../src/ASF/thirdparty/lvgl8/src/hal/../core/../core/lv_obj.h \
  ../src/ASF/thirdparty/lvgl8/src/hal/../extra/themes/default/lv_theme_default.h \
- ../src/ASF/thirdparty/lvgl8/src/hal/../extra/themes/default/../../../core/lv_obj.h
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\core\lv_obj.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gcc\arm-none-eabi\6.3.1\include\stdint.h:
 
@@ -228,7 +228,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/hal/../misc/../draw/../misc/lv_fs.h:
 
-../src/ASF/thirdparty/lvgl8/src/hal/../misc/../draw/../misc/../lv_conf_internal.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h:
 
 ../src/ASF/thirdparty/lvgl8/src/hal/../misc/../draw/../misc/lv_types.h:
 
@@ -254,11 +254,11 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/hal/../core/../misc/../font/lv_font.h:
 
-../src/ASF/thirdparty/lvgl8/src/hal/../core/../misc/../font/../lv_conf_internal.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h:
 
 ../src/ASF/thirdparty/lvgl8/src/hal/../core/../misc/../font/lv_symbol_def.h:
 
-../src/ASF/thirdparty/lvgl8/src/hal/../core/../misc/../font/../misc/lv_area.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\misc\lv_area.h:
 
 ../src/ASF/thirdparty/lvgl8/src/hal/../core/../misc/lv_color.h:
 
@@ -366,4 +366,4 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/hal/../extra/themes/default/lv_theme_default.h:
 
-../src/ASF/thirdparty/lvgl8/src/hal/../extra/themes/default/../../../core/lv_obj.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\core\lv_obj.h:

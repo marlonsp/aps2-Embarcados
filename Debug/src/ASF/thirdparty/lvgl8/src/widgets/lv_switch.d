@@ -18,10 +18,10 @@ src/ASF/thirdparty/lvgl8/src/widgets/lv_switch.d \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gcc\arm-none-eabi\6.3.1\include\stdbool.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../misc/lv_style.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../misc/../font/lv_font.h \
- ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../misc/../font/../lv_conf_internal.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../misc/../font/lv_symbol_def.h \
- ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../misc/../font/../misc/lv_area.h \
- ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../misc/../font/../misc/../lv_conf_internal.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\misc\lv_area.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\string.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\_ansi.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\newlib.h \
@@ -56,13 +56,13 @@ src/ASF/thirdparty/lvgl8/src/widgets/lv_switch.d \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/lv_hal_disp.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/lv_hal.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../draw/lv_img_buf.h \
- ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../draw/../misc/lv_color.h \
- ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../draw/../misc/lv_area.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\misc\lv_color.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\misc\lv_area.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../misc/lv_color.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../misc/lv_area.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../misc/lv_ll.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../misc/lv_timer.h \
- ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../misc/../lv_conf_internal.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../misc/lv_mem.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../misc/lv_log.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../misc/lv_types.h \
@@ -85,7 +85,7 @@ src/ASF/thirdparty/lvgl8/src/widgets/lv_switch.d \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../draw/lv_img_decoder.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../draw/lv_img_buf.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../draw/../misc/lv_fs.h \
- ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../draw/../misc/../lv_conf_internal.h \
+ c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../draw/../misc/lv_types.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../draw/../misc/lv_area.h \
  ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../draw/lv_img_cache.h \
@@ -152,13 +152,13 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\lib\gc
 
 ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../misc/../font/lv_font.h:
 
-../src/ASF/thirdparty/lvgl8/src/widgets/../core/../misc/../font/../lv_conf_internal.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h:
 
 ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../misc/../font/lv_symbol_def.h:
 
-../src/ASF/thirdparty/lvgl8/src/widgets/../core/../misc/../font/../misc/lv_area.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\misc\lv_area.h:
 
-../src/ASF/thirdparty/lvgl8/src/widgets/../core/../misc/../font/../misc/../lv_conf_internal.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-none-eabi\include\string.h:
 
@@ -228,9 +228,9 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../draw/lv_img_buf.h:
 
-../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../draw/../misc/lv_color.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\misc\lv_color.h:
 
-../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../draw/../misc/lv_area.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\misc\lv_area.h:
 
 ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../misc/lv_color.h:
 
@@ -240,7 +240,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../misc/lv_timer.h:
 
-../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../misc/../lv_conf_internal.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h:
 
 ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../hal/../misc/lv_mem.h:
 
@@ -286,7 +286,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\arm\arm-gnu-toolchain\arm-no
 
 ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../draw/../misc/lv_fs.h:
 
-../src/ASF/thirdparty/lvgl8/src/widgets/../core/../draw/../misc/../lv_conf_internal.h:
+c:\users\guilh\aps2-embarcados\src\asf\thirdparty\lvgl8\src\lv_conf_internal.h:
 
 ../src/ASF/thirdparty/lvgl8/src/widgets/../core/../draw/../misc/lv_types.h:
 
